@@ -984,9 +984,9 @@ dd.addModule = function(file)
 dd._loadModuleCount = 0;
 dd._loadModules = function()
 {
-    for(var i in dd._modules)
+    for(var i = dd._loadModuleCount; i < dd._modules.length; i++)
     {
-        var o = dd._modules[dd._loadModuleCount].split(/\./);
+        var o = dd._modules[i].split(/\./);
         var module = dd;
         for(var j in o)
             if(typeof(o[j]) == "string")
