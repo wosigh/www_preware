@@ -93,7 +93,7 @@
             <section label="Need Help or Want to Help Out?">
                 <img src="images/icon_wirc.png" class="icon-left"/>
                 <p>You can chat with the developers on the Freenode IRC network.</p>
-                <p>Join us in <a href="http://webchat.freenode.net/?channels=webos-internals">#webos-internals</a>.</p>
+                <p><a href="http://webchat.freenode.net/?channels=webos-internals">Join us in #webos-internals ...</a></p>
             </section>
         </right>
     </body>
