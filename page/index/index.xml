@@ -4,12 +4,11 @@
     <body>
         <left>
             <section label="New Site">
-                <p>Welcome to the new Preware.org site. It is still under construction. We will hopefully be integrating a feed search feature soon.  Until then you can browse the feeds manually below.</p>
-                <p><a href="http://ipkg.preware.org/feeds/">Browse Feeds</a></p>
+                <p>Welcome to the new Preware.org site. It is still under construction. We will hopefully be integrating a new feed search feature soon.  Before it is available, you can browse the <a href="http://ipkg.preware.org/feeds/">package feeds</a> manually.</p>
             </section>
             <section label="Introduction">
                 <p>Preware is a package management application for the Palm Pre. Users can install any package from any of the open standard package feeds on preware.org (or any other location that hosts an open standard package feed).</p>
-                <p>Preware is the most advanced installer currently available - it is only on-device installer that can install applications, themes, and patches.</p>
+                <p>Preware is the most advanced installer currently available - it is the only on-device installer that can install applications, themes, and patches, as well as give access to over 1600 Linux programs.</p>
                 <p><strong>Features</strong></p>
                 <substep label="1. "><span>Install / Remove / Update Applications</span></substep>
                 <substep label="2. "><span>Install / Remove / Update Themes</span></substep>
@@ -34,7 +33,7 @@
             <section label="Need Help or Want to Help Out?">
                 <img src="images/icon_wirc.png" class="icon-left"/>
                 <p>You can chat with the developers on the Freenode IRC network.</p>
-                <p>Join us in the #webos-internals channel.</p>
+                <p>Join us in <a href="http://webchat.freenode.net/?channels=webos-internals">#webos-internals</a>.</p>
             </section>
         </right>
     </body>
