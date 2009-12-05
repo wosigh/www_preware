@@ -984,10 +984,9 @@ dd.addModule = function(file)
     for(var j = 0; j < o.length; j++)
     {
         if(typeof(module[o[j]]) == "undefined")
-        {
             module[o[j]] = {};
+        else
             module = module[o[j]];
-        }
     }
     module.extend = dd.extend;
     dd.addScript("javascript/dd." + file + ".js");
