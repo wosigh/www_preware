@@ -75,7 +75,7 @@ dd.preware.extend({
                     });*/
                     var img = this(ha).addElement("a", {
                         "href":"http://webos-internals.org/",
-                        "style":"padding:2px;"
+                        "style":"padding: 15px 0 0 10px; display: block;"
                     });
                     this(img).addElement("img", {
                         "src":"images/temp_ad.png",
