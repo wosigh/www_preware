@@ -987,7 +987,7 @@ dd.addModule = function(file)
             module[o[j]] = {};
         module = module[o[j]];
     }
-    module.extend = function()
+    module.extend = function(o)
     {
         for(i in o)
             this[i] = o[i];
