@@ -988,7 +988,11 @@ dd.addModule = function(file)
         else
             module = module[o[j]];
     }
-    module.extend = dd.extend;
+    module.extend = function()
+    {
+        for(i in o)
+            this[i] = o[i];
+    };
     dd.addScript("javascript/dd." + file + ".js");
     dd._modules.push(file);
 };
