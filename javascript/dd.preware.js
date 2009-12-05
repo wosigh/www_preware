@@ -69,10 +69,10 @@ dd.preware = {
                     var s = this(this.html.body).addElement("div", {"class":"main"});
                     var h = this(s).addElement("div", {"class":"header"});
                     var ha = this(h).addElement("div", {"class":"advertisement"});
-                    this(ha).addElement("script", {
+                    /*this(ha).addElement("script", {
                         "type":"text/javascript",
                         "src":"http://pagead2.googlesyndication.com/pagead/show_ads.js"
-                    });
+                    });*/
                     this(h).addElement("img", {"src":"images/logo.png"});
                     this.preware._dom.call(this, s, this.xml.body[0]);
                     this.preware.page.properties = parameters;
