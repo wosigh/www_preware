@@ -990,7 +990,12 @@ dd._loadModules = function()
         var o = dd._modules[i].split(/\./);
         var module = dd;
         for(var j = 0; j < o.length; j++)
+        {
+            if(typeof(module) != "undefined")
                 module = module[o[j]];
+            else
+                break;
+        }
         if(typeof(module) == "undefined")
         {
             dd._loadInterval = setTimeout(dd._loadModules, 200);
