@@ -109,6 +109,8 @@ body
     font-weight:bold;
     color:#FFF;
     line-height:36px;
+    height:36px;
+    overflow:hidden;
 }
 .main .section .section-content
 {
