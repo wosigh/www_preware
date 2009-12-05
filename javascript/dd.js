@@ -988,8 +988,7 @@ dd._loadModules = function()
     {
         var o = dd._modules[i].split(/\./);
         var module = dd;
-        for(var j in o)
-            if(typeof(o[j]) == "string")
+        for(var j = 0; j < o.length; j++)
                 module = module[o[j]];
         if(typeof(module) == "undefined")
         {
