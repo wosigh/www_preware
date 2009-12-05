@@ -989,7 +989,8 @@ dd._loadModules = function()
         var o = dd._modules[dd._loadModuleCount].split(/\./);
         var module = dd;
         for(var j in o)
-            module = module[o[j]];
+            if(typeof(o[j]) == "string")
+                module = module[o[j]];
         if(typeof(module) == "undefined")
         {
             dd._loadInterval = setTimeout(dd._loadModules, 200);
