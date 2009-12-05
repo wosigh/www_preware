@@ -985,8 +985,7 @@ dd.addModule = function(file)
     {
         if(typeof(module[o[j]]) == "undefined")
             module[o[j]] = {};
-        else
-            module = module[o[j]];
+        module = module[o[j]];
     }
     module.extend = function()
     {
