@@ -78,12 +78,11 @@
                     <substep label="10. "><span>Select Preware from the list.</span></substep>
                     <substep label="11. "><span>Press DOWNLOAD.</span></substep>
                     <substep label="12. "><span>Press INSTALL.</span></substep>
-                    <substep label="13. "><span>If WebOS Quick Install offers to install the Package Manager Service automatically to enable tweaking, do not agree. It will install the wrong version. You must install it as detailed above.</span></substep>
                 </subsection>
                 <subsection label="Updating" open="false">
-                    <substep label="1. "><span>To update Preware or the Package Manager Service, simpy use Preware version 0.9.0 or later.</span></substep>
-                    <substep label="2. "><span>Make sure you update the Package Manager Service first, and the Preware application second. As of Preware 0.9.4, this restriction will be enforced automatically.</span></substep>
-                    <substep label="3. "><span>If you are updating to Preware version 0.9.3 or later and you have previously used the autopatch-feed package, please follow these [1] directions for the update.</span></substep>
+                    <substep label="1. "><span>To update Preware or the Package Manager Service, simpy use Preware itself.</span></substep>
+                    <substep label="2. "><span>When you update the Package Manager Service, you will be asked to do a Luna Restart. This will cause your cellular connection to drop, and your phone to be sluggish for 30 seconds or so.</span></substep>
+                    <substep label="3. "><span>When you update the Preware, it will close itself when the update completes. Simply launch Preware again to begin using the new version.</span></substep>
                 </subsection>
                 <subsection label="Frequently Asked Questions" open="false">
                     <p>None</p>
@@ -93,7 +92,7 @@
         <right>
             <section label="Need Help or Want to Help Out?">
                 <img src="images/icon_wirc.png" class="icon-left"/>
-                <p>You can chat with the developers in Freenode IRC</p>
+                <p>You can chat with the developers on the Freenode IRC network.</p>
                 <p>Join us in the #webos-internals channel.</p>
             </section>
         </right>
