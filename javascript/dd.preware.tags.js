@@ -1,4 +1,4 @@
-dd.preware.tags = {
+dd.preware.tags.extend({
     init:function()
     {
         // Screenshot
@@ -178,4 +178,4 @@ dd.preware.tags = {
                 return r;
             });
     }
-};
+});

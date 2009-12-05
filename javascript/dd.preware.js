@@ -1,4 +1,4 @@
-dd.preware = {
+dd.preware.extend({
     init:function()
     {
         dd(dd.html.body).clearElements();
@@ -129,4 +129,4 @@ dd.preware = {
             "func":func
         };
     }
-}
+});

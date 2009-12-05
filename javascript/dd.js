@@ -979,6 +979,11 @@ dd.preferences.extend = function(o)
 dd._modules = [];
 dd.addModule = function(file)
 {
+    var o = dd._modules[i].split(/\./);
+    var module = dd;
+    for(var j = 0; j < o.length; j++)
+        module = module[o[j]];
+    module.extend = dd.extend;
     dd.addScript("javascript/dd." + file + ".js");
     dd._modules.push(file);
 };
@@ -990,13 +995,8 @@ dd._loadModules = function()
         var o = dd._modules[i].split(/\./);
         var module = dd;
         for(var j = 0; j < o.length; j++)
-        {
-            if(typeof(module) != "undefined")
-                module = module[o[j]];
-            else
-                break;
-        }
-        if(typeof(module) == "undefined")
+            module = module[o[j]];
+        if(typeof(module.init) == "undefined")
         {
             dd._loadInterval = setTimeout(dd._loadModules, 200);
             break;
