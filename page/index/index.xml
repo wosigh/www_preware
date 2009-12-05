@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page id="org.webosinternals.preware">
+    <script src="page/index/index.js" />
+    <body>
+        <left>
+            <section label="New Site">
+                <p>Welcome to the new Preware.org site. We will hopefully be integrating the feed search till then you can browse the fees manually below.</p>
+                <p><a href="http://ipkg.preware.org/feeds/">Browse Feeds</a></p>
+            </section>
+            <section label="Introduction">
+                <p>Preware is a package management application for the Palm Pre. User can install any package from any of the open standard package feed on preware.org (or any other location that hosts an open standard package feed).</p>
+                <p>Preware is the most advanced installer currently. Being the only on device installer that can install application, themes, and patches.</p>
+                <p><strong>Features</strong></p>
+                <substep label="1. "><span>Install / Remove / Update Applications</span></substep>
+                <substep label="2. "><span>Install / Remove / Update Themes</span></substep>
+                <substep label="3. "><span>Install / Remove / Update Patches</span></substep>
+                <substep label="4. "><span>Update Screen</span></substep>
+                <p style="height:10px;"> </p>
+                <p><button id="link_install" label="Preware Install Guides" /></p>
+                <subsection label="Frequently Asked Questions" open="false">
+                    <p>None</p>
+                </subsection>
+            </section>
+        </left>
+        <right>
+            <screenshots label="Screenshots">
+                <screenshot src="page/index/screenshot_1.png" />
+                <screenshot src="page/index/screenshot_2.png" />
+                <screenshot src="page/index/screenshot_3.png" />
+                <screenshot src="page/index/screenshot_4.png" />
+                <screenshot src="page/index/screenshot_5.png" />
+                <screenshot src="page/index/screenshot_6.png" />
+            </screenshots>
+            <section label="Need Help or Want to Help Out?">
+                <img src="images/icon_wirc.png" class="icon-left"/>
+                <p>You can chat with the developers in Freenode IRC</p>
+                <p>Join us in the #webos-internals channel.</p>
+            </section>
+        </right>
+    </body>
+</page>

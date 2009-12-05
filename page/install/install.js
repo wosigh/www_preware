@@ -1,0 +1,11 @@
+dd.preware.page({
+    setup:function()
+    {
+        dd("link_index").event({
+            onClick:function()
+            {
+                dd.preware.page("index");
+            }
+        });
+    }
+});

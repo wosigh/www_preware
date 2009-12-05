@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page id="org.webosinternals.preware">
+    <script src="page/install/install.js" />
+    <body>
+        <left>
+            <p><button id="link_index" label="Back to Preware Overview" /></p>
+            <section label="Installing Preware">
+                <p>Expand the category that matches your operating system. Follow the simple and organised steps to install Preware.</p>
+                <subsection label="Install Guide (Windows)" open="false">
+                    <step label="Step 1: Put your phone into Developer Mode (skip if you already have developer mode on)">
+                        <substep label="1. "><span>Go to the main (start) screen on your Palm Pre or Pixi.</span></substep>
+                        <substep label="2. "><span>Start typing "webos20090606" without the quotation marks.</span></substep>
+                        <substep label="3. "><span>Tap the Developer Mode icon and turn Developer Mode on.</span></substep>
+                        <substep label="4. "><span>Set Developer Mode to ON.</span></substep>
+                        <substep label="5. "><span>When asked, tap Reset The Device. Your phone will restart.</span></substep>
+                        <substep label="6. "><span>Connect the USB cable to your computer and select "Just Charge" when the phone prompts you.</span></substep>
+                    </step>
+                    <step label="Step 2: Install Required Software">
+                        <substep label="1. ">
+                            <a href="http://www.java.com/en/download/installed.jsp?detect=jre&amp;try=1">Click here</a>
+                            <span> to verify that you have the latest java installed on your computer and update if needed.</span>
+                        </substep>
+                        <substep label="2. ">
+                            <a href="http://www.webos-internals.org/wiki/Webos_Doctor_Versions">Click here</a>
+                            <span> to download the current webOS Doctor for your carrier and phone in a subdirectory your will remember (maybe "Palm"?). If you already have it, skip this step.</span>
+                        </substep>
+                    </step>
+                    <step label="Step 3: Install Preware">
+                        <substep label="1. ">
+                            <span>Download the most recent PrewareInstaller.jar from </span>
+                            <a href="http://get.preware.org/">get.preware.org</a>
+                            <span>. (The exe version may not work.)</span>
+                        </substep>
+                        <substep label="2. "><span>Run PrewareInstaller (Double click the jar file you just downloaded.)</span></substep>
+                        <substep label="3. "><span>Click Tools then Refresh Novacomd</span></substep>
+                        <substep label="4. "><span>Click INSTALL.</span></substep>
+                    </step>
+                    <step label="Step 4: Restart your phone">
+                        <substep label="1. ">
+                            <span>Press and hold the ON/OFF button for 8 seconds</span>
+                        </substep>
+                        <substep label="2. ">
+                            <span>Tap Power</span></substep>
+                        <substep label="3. ">
+                            <span>Tap Restart</span>
+                        </substep>
+                    </step>
+                    <step label="Step 5: Update the Package Manager Service and Preware">
+                        <substep label="1. "><span>Tap Launcher</span></substep>
+                        <substep label="2. "><span>Tap Preware</span></substep>
+                        <substep label="3. "><span>Tap OK to continue if there is a splash screen</span></substep>
+                        <substep label="4. "><span>Tap Package Updates (an update for Package Manager Service and Preware should be shown)</span></substep>
+                        <substep label="5. "><span>Tap Package Manager Service</span></substep>
+                        <substep label="6. "><span>Tap Update</span></substep>
+                        <substep label="7. "><span>Tap OK when the Package Manager Service application has installed</span></substep>
+                        <substep label="8. "><span>Swipe back to return to Package Updates</span></substep>
+                        <substep label="9. "><span>Tap Preware</span></substep>
+                        <substep label="10. "><span>Tap Update</span></substep>
+                        <substep label="11. "><span>Tap OK when the Preware application has installed</span></substep>
+                    </step>
+                </subsection>
+                <subsection label="Install Guide (Linux)" open="false">
+                    <p>Coming Soon...</p>
+                </subsection>
+                <subsection label="Install Guide (Macintosh)" open="false">
+                    <p>Coming Soon...</p>
+                </subsection>
+                <subsection label="Installing with WebOS Quick Install (All)" open="false">
+                    <substep label="1. "><span>Put your device in Developer Mode</span></substep>
+                    <substep label="2. "><span>Run WebOS Quick Install</span></substep>
+                    <substep label="3. "><span>Press the third button on the right</span></substep>
+                    <substep label="4. "><span>Choose WebOS Internals Feed (all) from the dropdown list at the top.</span></substep>
+                    <substep label="5. "><span>Select Package Manager Service from the list.</span></substep>
+                    <substep label="6. "><span>Press DOWNLOAD.</span></substep>
+                    <substep label="7. "><span>Press INSTALL.</span></substep>
+                    <substep label="8. "><span>Press the third button on the right</span></substep>
+                    <substep label="9. "><span>Choose WebOS Internals Feed (all) from the dropdown list at the top.</span></substep>
+                    <substep label="10. "><span>Select Preware from the list.</span></substep>
+                    <substep label="11. "><span>Press DOWNLOAD.</span></substep>
+                    <substep label="12. "><span>Press INSTALL.</span></substep>
+                    <substep label="13. "><span>If WebOS Quick Install offers to install the Package Manager Service automatically to enable tweaking, do not agree. It will install the wrong version. You must install it as detailed above.</span></substep>
+                </subsection>
+                <subsection label="Updating" open="false">
+                    <substep label="1. "><span>To update Preware or the Package Manager Service, simpy use Preware version 0.9.0 or later.</span></substep>
+                    <substep label="2. "><span>Make sure you update the Package Manager Service first, and the Preware application second. As of Preware 0.9.4, this restriction will be enforced automatically.</span></substep>
+                    <substep label="3. "><span>If you are updating to Preware version 0.9.3 or later and you have previously used the autopatch-feed package, please follow these [1] directions for the update.</span></substep>
+                </subsection>
+                <subsection label="Frequently Asked Questions" open="false">
+                    <p>None</p>
+                </subsection>
+            </section>
+        </left>
+        <right>
+            <section label="Need Help or Want to Help Out?">
+                <img src="images/icon_wirc.png" class="icon-left"/>
+                <p>You can chat with the developers in Freenode IRC</p>
+                <p>Join us in the #webos-internals channel.</p>
+            </section>
+        </right>
+    </body>
+</page>
