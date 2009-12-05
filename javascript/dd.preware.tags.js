@@ -143,7 +143,7 @@ dd.preware.tags.extend({
                 var t = this(s).addElement("div", {"class":"subsection-title"});
                 var ti = this(t).addElement("div", {"class":"subsection-title-left"});
                 this(ti).addElement("div", attributes["label"], {"class":"subsection-title-label"});
-                var id = (Math.ceil(Math.random() * 9999)).toString();
+                var id = (Math.ceil(Math.random() * 999999)).toString();
                 this(ti).addElement("a", {
                     "class":"subsection-title-right",
                     "href":"#",
