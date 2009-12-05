@@ -10,7 +10,7 @@ dd.preware = {
         });
         var c = dd(l).addElement("div");
         dd(c).addElement("h1", "Loading Page");
-        dd(c).addElement("p", "The sites contents and feeds are loading.");
+        dd(c).addElement("p", "The site content and package feeds are loading.");
         dd("loading").height = window.innerHeight;
         this.preware.animateFadeOut();
         setTimeout(this.preware.page, 750, "index");
