@@ -73,6 +73,14 @@ dd.preware.extend({
                         "type":"text/javascript",
                         "src":"http://pagead2.googlesyndication.com/pagead/show_ads.js"
                     });*/
+                    var img = this(ha).addElement("a", {
+                        "href":"http://webos-internals.org/",
+                        "style":"padding:2px;"
+                    });
+                    this(img).addElement("img", {
+                        "src":"images/temp_ad.png",
+                        "style":"border:none;"
+                    });
                     this(h).addElement("img", {"src":"images/logo.png"});
                     this.preware._dom.call(this, s, this.xml.body[0]);
                     this.preware.page.properties = parameters;
