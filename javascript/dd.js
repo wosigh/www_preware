@@ -979,7 +979,7 @@ dd.preferences.extend = function(o)
 dd._modules = [];
 dd.addModule = function(file)
 {
-    var o = dd._modules[i].split(/\./);
+    var o = file.split(/\./);
     var module = dd;
     for(var j = 0; j < o.length; j++)
         module = module[o[j]];
