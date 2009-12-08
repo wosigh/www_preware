@@ -508,7 +508,11 @@ dd.fn = {
                 o.method = o.method.toUpperCase();
             else
                 o.method = "POST";
-            var req = new XMLHttpRequest();
+            var req;
+            if (window.XMLHttpRequest)
+                req = new XMLHttpRequest();
+            else if (window.ActiveXObject)
+                req = new ActiveXObject("Microsoft.XMLHTTP");
             req.onreadystatechange = function()
             {
                 if(req.readyState == 4)
