@@ -330,7 +330,7 @@ dd.fn = {
     {
         this.e.select();
         return dd.fn;
-    }
+    },
     text:function(s)
     {
         if(typeof(s) == "undefined")
