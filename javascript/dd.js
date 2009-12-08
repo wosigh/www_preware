@@ -440,7 +440,7 @@ dd.fn = {
                 return true;
         return false;
     },
-    value(v)
+    value:function(v)
     {
         if(typeof(v) == "undefined")
         {
