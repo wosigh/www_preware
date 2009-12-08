@@ -851,7 +851,10 @@ dd._load = function()
     dd._loadModules();
 };
 // Initialise
-window.addEventListener("load", dd._load, false);
+if(window.addEventListener)
+    window.addEventListener("load", dd._load, false);
+else
+    window.attachEvent('onload', dd._load);
 
 // JSON
 if(!this.JSON){
