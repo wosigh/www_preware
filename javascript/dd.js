@@ -200,7 +200,7 @@ dd.fn = {
                             if(typeof(px) == "undefined")
                             {
                                 return window.scrollY;
-                            {
+                            }
                             else
                             {
                                 window.scrollY = px;
