@@ -30,7 +30,7 @@ dd.preware.extend({
     },
     animateOverlayHandle:function(o)
     {
-        dd("loading").opacity = o;
+        dd("loading").opacity(o);
     },
     scripts:[],
     styles:[],
