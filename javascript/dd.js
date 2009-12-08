@@ -411,8 +411,16 @@ dd.fn = {
         }
         else
         {
-            this.e.style.opacity = i;
-            return parseInt(this.e.style.opacity);
+            if(this.e.style.filter)
+            {
+                this.e.style.filter = "alpha(opacity = " + (i * 100) + ")";
+                return i;
+            }
+            else
+            {
+                this.e.style.opacity = i;
+                return parseInt(this.e.style.opacity);
+            }
         }
     },
     addClass:function(name)
