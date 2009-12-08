@@ -197,7 +197,7 @@ dd.fn = {
                     scroll:{
                         top:function(px)
                         {
-                            if(typeof(px))
+                            if(typeof(px) == "undefined")
                             {
                                 return window.scrollY;
                             {
@@ -209,7 +209,7 @@ dd.fn = {
                         },
                         left:function(px)
                         {
-                            if(typeof(px))
+                            if(typeof(px) == "undefined")
                             {
                                 return window.scrollX;
                             }
