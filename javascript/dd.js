@@ -714,7 +714,6 @@ dd.xml = function(o)
         parameters:o.parameters,
         onSuccess:function(o)
         {
-            var parser = new DOMParser();
             // TODO: Optimise this with 1 regex later on
             var text = o.text.replace(/\w+:\w+=".*?"|<!--.*?-->/g, "");
             text = text.replace(/<\?xml-stylesheet([^\?]*?)\?>/img, "");
@@ -744,7 +743,17 @@ dd.xml = function(o)
                     return 'onmouseout="' + encodeURIComponent($1) + '"';
                 });
             }
-            this.fn.xml.doc = parser.parseFromString(text, "text/xml");
+            if (window.DOMParser)
+            {
+                parser = new DOMParser();
+                this.fn.xml.doc = parser.parseFromString(text, "text/xml");
+            }
+            else
+            {
+                this.fn.xml.doc = new ActiveXObject("Microsoft.XMLDOM");
+                this.fn.xml.doc.async="false";
+                this.fn.xml.doc.loadXML(text);
+            }
             
             this.xml[this.fn.xml.id] = this.fn.xml.parser.call(this, {
                 doc:this.fn.xml.doc,
