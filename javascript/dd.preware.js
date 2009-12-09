@@ -11,7 +11,7 @@ dd.preware.extend({
         var c = dd(l).addElement("div");
         dd(c).addElement("h1", "Loading Page");
         dd(c).addElement("p", "The site content and package feeds are loading.");
-        dd("loading").height = window.innerHeight;
+        dd("loading").height(window.innerHeight);
         this.preware.animateFadeOut();
         this.preware.page.extend = function(o)
         {
