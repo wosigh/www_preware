@@ -751,7 +751,7 @@ dd.xml = function(o)
             else
             {
                 var temp = new ActiveXObject("Microsoft.XMLDOM");
-                temp.doc.async="false";
+                temp.async="false";
                 temp.loadXML(text);
                 this.fn.xml.doc.childNodes = [];
                 this.fn.xml.doc.childNodes[0] = temp.childNodes[1];
