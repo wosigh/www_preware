@@ -13,7 +13,6 @@ dd.preware.extend({
         dd(c).addElement("p", "The site content and package feeds are loading.");
         dd("loading").height = window.innerHeight;
         this.preware.animateFadeOut();
-        setTimeout(this.preware.page, 750, "index");
         this.preware.page.extend = function(o)
         {
             for(i in o)
@@ -22,15 +21,17 @@ dd.preware.extend({
     },
     animateFadeOut:function()
     {
-        var o = [1, 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1];
+        var o = [1, 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
         for(var i in o)
         {
-            setTimeout(dd.preware.animateOverlayHandle, i * 50, o[i]);
+            setTimeout(function(o){dd.preware.animateOverlayHandle(o);}, i * 50, o[i]);
         }
     },
     animateOverlayHandle:function(o)
     {
         dd("loading").opacity(o);
+        if(o == 0)
+            dd.preware.page("index");
     },
     scripts:[],
     styles:[],
