@@ -24,7 +24,7 @@ dd.preware.extend({
         var o = [1, 1, 1, 1, 1, 1, 1, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
         for(var i in o)
         {
-            setTimeout(function(o){dd.preware.animateOverlayHandle(o);}, i * 50, o[i]);
+            setTimeout(function(t){dd.preware.animateOverlayHandle(t);}, i * 50, o[i]);
         }
     },
     animateOverlayHandle:function(o)
