@@ -103,7 +103,10 @@ dd.fn = {
     {
         return function(e)
         {
-            if (!e) var e = window.event;
+            if(!e)
+                var e = window.event;
+            if (e.srcElement)
+                e.target = e.srcElement;
             o.scope.extend(o.scope.fn.eventHandlers[type].call(o.scope.fn, e, this));
             if(!(o.scope.fn.event.clickVoid && type == "onClick"))
                 var r = o[type].call(o.scope);
