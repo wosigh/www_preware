@@ -695,14 +695,6 @@ dd.xml = function(o)
         this.fn.xml.id = o.id;
     else
         this.fn.xml.current = o.id;
-    // Change to Remove Tags array later on
-    if(o.removeStyle){this.fn.xml.removeStyle = o.removeStyle;}else{this.fn.xml.removeStyle = false;}
-    if(o.removeScript){this.fn.xml.removeScript = o.removeScript;}else{this.fn.xml.removeScript = false;}
-    if(o.removeScript){this.fn.xml.removeMeta = o.removeMeta;}else{this.fn.xml.removeMeta = false;}
-    if(o.removeLink){this.fn.xml.removeLink = o.removeLink;}else{this.fn.xml.removeLink = false;}
-    if(o.removeInput){this.fn.xml.removeInput = o.removeInput;}else{this.fn.xml.removeInput = false;}
-    if(o.removeImg){this.fn.xml.removeImg = o.removeImg;}else{this.fn.xml.removeImg = false;}
-    if(o.fixXHTML){this.fn.xml.fixXHTML = o.fixXHTML;}else{this.fn.xml.fixXHTML = false;}
     this.fn.xml.onSuccess = o.onSuccess;
     this.fn.xml.onFailure = o.onFailure;
     this.fn.ajax.request({
@@ -714,33 +706,6 @@ dd.xml = function(o)
         {
             // TODO: Optimise this with 1 regex later on
             var text = o.text.replace(/\w+:\w+=".*?"|<!--.*?-->/g, "");
-            text = text.replace(/<\?xml-stylesheet([^\?]*?)\?>/img, "");
-            if(this.fn.xml.removeStyle)
-                text = text.replace(/<(style)([\s\S]*?)<\/\1>/img, "");
-            if(this.fn.xml.removeScript)
-                text = text.replace(/<(script)([\s\S]*?)<\/\1>/img, "");
-            if(this.fn.xml.removeMeta)
-                text = text.replace(/<meta([\s\S]*?)>/img, "");
-            if(this.fn.xml.removeLink)
-                text = text.replace(/<link([\s\S]*?)>/img, "");
-            if(this.fn.xml.removeInput)
-                text = text.replace(/<input([\s\S]*?)>/img, "");
-            if(this.fn.xml.removeImg)
-                text = text.replace(/<img([\s\S]*?)>/img, "");
-            if(this.fn.xml.fixXHTML)
-            {
-                text = text.replace(/<br(\s+)?>/img, "<br />");
-                text.replace(/onmouseover="([^"]*)"/img,
-                function($1)
-                {
-                    return 'onmouseover="' + encodeURIComponent($1) + '"';
-                });
-                text.replace(/onmouseout="([^"]*)"/img,
-                function($1)
-                {
-                    return 'onmouseout="' + encodeURIComponent($1) + '"';
-                });
-            }
             if (window.DOMParser)
             {
                 parser = new DOMParser();
