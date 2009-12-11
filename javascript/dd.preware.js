@@ -6,7 +6,8 @@ dd.preware.extend({
             "id":"loading"
         });
         var l = dd(o).addElement("div", {
-            "class":"center"
+            "class":"center",
+            "id":"loading_content"
         });
         var c = dd(l).addElement("div");
         dd(c).addElement("h1", "Loading Page");
@@ -30,6 +31,7 @@ dd.preware.extend({
     animateOverlayHandle:function(o)
     {
         dd("loading").opacity(o);
+        dd("loading_content").opacity(o);
         if(o == 0)
             dd.preware.page("index");
     },
