@@ -839,7 +839,6 @@ dd.xml.extend = function(o)
     for(i in o)
         this[i] = o[i];
 };
-// Initialise
 if(window.addEventListener)
     window.addEventListener("load", dd._load, false);
 else
