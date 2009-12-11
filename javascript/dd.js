@@ -415,7 +415,8 @@ dd.fn = {
         }
         else
         {
-            this.e.setAttribute("style", "filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=" + (i * 100) + ")','alpha(opacity=" + (i * 100) + ")'");
+            //this.e.setAttribute("style", "filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=" + (i * 100) + ")','alpha(opacity=" + (i * 100) + ")'");
+            this.e.style.filter = "alpha(opacity=" + (i * 100) + ")";
             this.e.style.opacity = i;
             return i;
         }
