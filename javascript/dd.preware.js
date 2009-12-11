@@ -6,10 +6,9 @@ dd.preware.extend({
             "id":"loading"
         });
         var l = dd(o).addElement("div", {
-            "class":"center",
-            "id":"loading_content"
+            "class":"center"
         });
-        var c = dd(l).addElement("div");
+        var c = dd(l).addElement("div", {"id":"loading_content"});
         dd(c).addElement("h1", "Loading Page");
         dd(c).addElement("p", "The site content and package feeds are loading.");
         dd("loading").height(document.documentElement.clientHeight);
