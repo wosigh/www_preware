@@ -55,6 +55,8 @@ dd.preware.extend({
     {
         if(dd("main").exists())
             dd("main").opacity(o);
+        if(o == 1.0)
+            dd("main").style.filter = "";
     },
     scripts:[],
     styles:[],
