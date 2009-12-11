@@ -416,7 +416,11 @@ dd.fn = {
         else
         {
             //this.e.setAttribute("style", "filter:'progid:DXImageTransform.Microsoft.Alpha(opacity=" + (i * 100) + ")','alpha(opacity=" + (i * 100) + ")'");
-            this.e.style.filter = "alpha(opacity=" + (i * 100) + ")";
+            //this.e.style.filter = "alpha(opacity=" + (i * 100) + ")";
+            var value = i;
+            this.e.filter = (elem.filter || "").replace( /alpha\([^)]*\)/, "" ) +
+					(parseInt( value ) + '' == "NaN" ? "" : "alpha(opacity=" + value * 100 + ")");
+
             this.e.style.opacity = i;
             return i;
         }
