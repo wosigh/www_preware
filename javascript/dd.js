@@ -308,20 +308,12 @@ dd.extend({
         {
             return this.e.setAttribute(property, value);
         },
-        /**
-         * Set a style
-         * @returns {object} dd.fn
-         */
         setStyle:function(o)
         {
             for(var i in o)
                 this.e.style[i] = o[i];
             return dd.fn;
         },
-        /**
-         * Remove a style
-         * @returns {object} dd.fn
-         */
         removeStyle:function(name)
         {
             return dd.fn;
