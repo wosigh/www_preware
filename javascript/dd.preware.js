@@ -34,21 +34,22 @@ dd.preware.extend({
         if(o == 0)
             dd.preware.page("index");
     },
-    animatePageFadeIn:function()
+    animatePageFadeOut:function()
     {
         var o = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
         for(var i in o)
             setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
     },
-    animatePageFadeOut:function()
+    animatePageFadeIn:function()
     {
-        var o = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+        var o = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
         for(var i in o)
             setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
     },
     animatePageHandle:function(o)
     {
-        dd("main").opacity(o);
+        if(dd("main").exists())
+            dd("main").opacity(o);
     },
     scripts:[],
     styles:[],

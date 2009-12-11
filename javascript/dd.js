@@ -39,6 +39,13 @@ dd.extend({
             this.fn.scope = this;
             return this.fn;
         },
+        exists:function()
+        {
+            if(typeof(this.e) == "undefined")
+                return false;
+            else
+                return true;
+        },
         parameters:function(v)
         {
             if(typeof(v) == "undefined")
