@@ -752,14 +752,6 @@ dd.extend({
             }
         });
     },
-    xml:{
-        _id:{},
-        extend:function(o)
-        {
-            for(i in o)
-                this[i] = o[i];
-        }
-    },
     preferences:{
         _data:{},
         load:function()
@@ -841,6 +833,12 @@ dd.extend({
         dd._loadModules();
     }
 });
+dd.xml._id = {};
+dd.xml.extend = function(o)
+{
+    for(i in o)
+        this[i] = o[i];
+};
 // Initialise
 if(window.addEventListener)
     window.addEventListener("load", dd._load, false);
