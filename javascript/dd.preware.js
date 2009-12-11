@@ -34,12 +34,29 @@ dd.preware.extend({
         if(o == 0)
             dd.preware.page("index");
     },
+    animatePageFadeIn:function()
+    {
+        var o = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
+        for(var i in o)
+            setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
+    },
+    animatePageFadeOut:function()
+    {
+        var o = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+        for(var i in o)
+            setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
+    },
+    animatePageHandle:function(o)
+    {
+        dd("main").opacity(o);
+    },
     scripts:[],
     styles:[],
     page:function(page, parameters)
     {
         if(typeof(page) == "string")
         {
+            dd.preware.animatePageFadeOut();
             if(typeof(parameters) == "undefined")
                 var parameters = {};
             dd.xml({
@@ -68,7 +85,7 @@ dd.preware.extend({
                     // - Background
                     this(this.html.body).e.style.background = "url(images/background.png) center top repeat-y #AFAFA8";
                     // - Fixed Header
-                    var s = this(this.html.body).addElement("div", {"class":"main"});
+                    var s = this(this.html.body).addElement("div", {"class":"main","id":"main"});
                     var h = this(s).addElement("div", {"class":"header"});
                     var ha = this(h).addElement("div", {"class":"advertisement"});
                     /*this(ha).addElement("script", {
@@ -95,6 +112,7 @@ dd.preware.extend({
                         this.preware.scripts.push(this.xml.script[i].getAttribute("src"));
                         this.addScript(this.xml.script[i].getAttribute("src"));
                     }
+                    dd.preware.animatePageFadeIn();
                 },
                 onFailure:function()
                 {
