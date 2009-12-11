@@ -33,7 +33,7 @@ dd.extend({
                 }
                 else
                 {
-                    alert("Error: ID '" + o + "' does not exist");
+                    delete(this.fn.e);
                 }
             }
             this.fn.scope = this;
