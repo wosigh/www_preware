@@ -651,374 +651,198 @@ dd.extend({
                 return xml;
             }
         }
-    }
-});
-dd.ajax = function(o)
-{
-    
-};
-dd.addScript = function(file)
-{
-    var headID = document.getElementsByTagName("head")[0];         
-    var newScript = document.createElement('script');
-    newScript.type = 'text/javascript';
-    newScript.src = file;
-    headID.appendChild(newScript);
-};
-dd.removeScript = function(file)
-{
-    var headID = document.getElementsByTagName("head")[0].children;
-    for(var i in headID)
-        if(headID[i].tagName == "SCRIPT")
-            if(headID[i].getAttribute('src') == file)
-                headID[i].parentNode.removeChild(headID[i]);
-};
-dd.addStyle = function(file)
-{
-    var headID = document.getElementsByTagName("head")[0];         
-    var cssNode = document.createElement('link');
-    cssNode.type = 'text/css';
-    cssNode.rel = 'stylesheet';
-    cssNode.href = file;
-    cssNode.media = 'screen';
-    headID.appendChild(cssNode);
-};
-dd.removeStyle = function(file)
-{
-    var headID = document.getElementsByTagName("head")[0].children;
-    for(var i in headID)
-        if(headID[i].tagName == "LINK")
-            if(headID[i].getAttribute('href') == file)
-                headID[i].parentNode.removeChild(headID[i]);
-};
-dd.xml = function(o)
-{
-    if(o.id)
-        this.fn.xml.id = o.id;
-    else
-        this.fn.xml.current = o.id;
-    this.fn.xml.onSuccess = o.onSuccess;
-    this.fn.xml.onFailure = o.onFailure;
-    this.fn.ajax.request({
-        scope:this,
-        url:o.url,
-        method:o.method,
-        parameters:o.parameters,
-        onSuccess:function(o)
-        {
-            // TODO: Optimise this with 1 regex later on
-            var text = o.text.replace(/\w+:\w+=".*?"|<!--.*?-->/g, "");
-            if (window.DOMParser)
-            {
-                parser = new DOMParser();
-                this.fn.xml.doc = parser.parseFromString(text, "text/xml");
-            }
-            else
-            {
-                var temp = new ActiveXObject("Microsoft.XMLDOM");
-                temp.async="false";
-                temp.loadXML(text);
-                this.fn.xml.doc = {};
-                this.fn.xml.doc.childNodes = [];
-                this.fn.xml.doc.childNodes[0] = temp.childNodes[1];
-            }
-            
-            this.xml[this.fn.xml.id] = this.fn.xml.parser.call(this, {
-                doc:this.fn.xml.doc,
-                index:0
-            });
-            // Makes references easier.
-            this.xml._id[this.fn.xml.id] = true;
-            for(var i in this.xml)
-                if(!(i in this.xml._id || i == "extend" || i == "_id"))
-                    delete(this.xml[i]);
-            this.xml.extend(this.xml[this.fn.xml.id]);
-            
-            this.fn.xml.onSuccess.call(this, {
-                id:this.fn.xml.id,
-                xml:this.xml[this.fn.xml.id]
-            });
-            delete(parser);
-            delete(this.fn.xml.doc);
-        },
-        onFailure:function(o)
-        {
-            if(this.fn.xml.onFailure)
-                this.fn.xml.onFailure.call(this, {
-                    status:o.status,
-                    text:o.statusText
-                });
-            else
-                alert("Warning: Please catch errors with onFailure:function(){/* this.status, this.statusText */}");
-        }
-    });
-};
-dd.xml._id = {};
-dd.xml.extend = function(o)
-{
-    for(i in o)
-        this[i] = o[i];
-};
-dd.preferences = {
-    _data:{},
-    load:function()
-    {
-        for(i in this)
-        {
-            if(i != "save" || i != "load")
-                delete(this[i]);
-        }
-        var the_cookie = document.cookie.split(';');
-        if (the_cookie[0])
-        {
-            this._data = unescape(the_cookie[0]).parseJSON();
-        }
-        this.extend(this._data);
-        return this._data;
     },
-    save:function()
+    ajax:function(o)
     {
-        var d = new Date(2020, 02, 02);
-        var p = '/';
-        for(i in this)
+        
+    },
+    addScript:function(file)
+    {
+        var headID = document.getElementsByTagName("head")[0];         
+        var newScript = document.createElement('script');
+        newScript.type = 'text/javascript';
+        newScript.src = file;
+        headID.appendChild(newScript);
+    },
+    removeScript:function(file)
+    {
+        var headID = document.getElementsByTagName("head")[0].children;
+        for(var i in headID)
+            if(headID[i].tagName == "SCRIPT")
+                if(headID[i].getAttribute('src') == file)
+                    headID[i].parentNode.removeChild(headID[i]);
+    },
+    addStyle:function(file)
+    {
+        var headID = document.getElementsByTagName("head")[0];         
+        var cssNode = document.createElement('link');
+        cssNode.type = 'text/css';
+        cssNode.rel = 'stylesheet';
+        cssNode.href = file;
+        cssNode.media = 'screen';
+        headID.appendChild(cssNode);
+    },
+    removeStyle:function(file)
+    {
+        var headID = document.getElementsByTagName("head")[0].children;
+        for(var i in headID)
+            if(headID[i].tagName == "LINK")
+                if(headID[i].getAttribute('href') == file)
+                    headID[i].parentNode.removeChild(headID[i]);
+    },
+    xml:function(o)
+    {
+        if(o.id)
+            this.fn.xml.id = o.id;
+        else
+            this.fn.xml.current = o.id;
+        this.fn.xml.onSuccess = o.onSuccess;
+        this.fn.xml.onFailure = o.onFailure;
+        this.fn.ajax.request({
+            scope:this,
+            url:o.url,
+            method:o.method,
+            parameters:o.parameters,
+            onSuccess:function(o)
+            {
+                // TODO: Optimise this with 1 regex later on
+                var text = o.text.replace(/\w+:\w+=".*?"|<!--.*?-->/g, "");
+                if (window.DOMParser)
+                {
+                    parser = new DOMParser();
+                    this.fn.xml.doc = parser.parseFromString(text, "text/xml");
+                }
+                else
+                {
+                    var temp = new ActiveXObject("Microsoft.XMLDOM");
+                    temp.async="false";
+                    temp.loadXML(text);
+                    this.fn.xml.doc = {};
+                    this.fn.xml.doc.childNodes = [];
+                    this.fn.xml.doc.childNodes[0] = temp.childNodes[1];
+                }
+                
+                this.xml[this.fn.xml.id] = this.fn.xml.parser.call(this, {
+                    doc:this.fn.xml.doc,
+                    index:0
+                });
+                // Makes references easier.
+                this.xml._id[this.fn.xml.id] = true;
+                for(var i in this.xml)
+                    if(!(i in this.xml._id || i == "extend" || i == "_id"))
+                        delete(this.xml[i]);
+                this.xml.extend(this.xml[this.fn.xml.id]);
+                
+                this.fn.xml.onSuccess.call(this, {
+                    id:this.fn.xml.id,
+                    xml:this.xml[this.fn.xml.id]
+                });
+                delete(parser);
+                delete(this.fn.xml.doc);
+            },
+            onFailure:function(o)
+            {
+                if(this.fn.xml.onFailure)
+                    this.fn.xml.onFailure.call(this, {
+                        status:o.status,
+                        text:o.statusText
+                    });
+                else
+                    alert("Warning: Please catch errors with onFailure:function(){/* this.status, this.statusText */}");
+            }
+        });
+    },
+    xml:{
+        _id:{},
+        extend:function(o)
         {
-            if(i != "save" || i != "load")
-                this._data[i] = this[i];
+            for(i in o)
+                this[i] = o[i];
         }
-        document.cookie = escape(this._data.toJSONString())
-                          + ';path=' + p
-                          + ';expires=' + d.toUTCString();
-    }
-}
-dd.preferences.extend = function(o)
-{
-    for(i in o)
-        this[i] = o[i];
-};
-dd._modules = [];
-dd.addModule = function(file)
-{
-    var o = file.split(/\./);
-    var module = dd;
-    for(var j = 0; j < o.length; j++)
+    },
+    preferences:{
+        _data:{},
+        load:function()
+        {
+            for(i in this)
+            {
+                if(i != "save" || i != "load")
+                    delete(this[i]);
+            }
+            var the_cookie = document.cookie.split(';');
+            if (the_cookie[0])
+            {
+                this._data = unescape(the_cookie[0]).parseJSON();
+            }
+            this.extend(this._data);
+            return this._data;
+        },
+        save:function()
+        {
+            var d = new Date(2020, 02, 02);
+            var p = '/';
+            for(i in this)
+            {
+                if(i != "save" || i != "load")
+                    this._data[i] = this[i];
+            }
+            document.cookie = escape(this._data.toJSONString())
+                              + ';path=' + p
+                              + ';expires=' + d.toUTCString();
+        },
+        extend:function(o)
+        {
+            for(i in o)
+                this[i] = o[i];
+        }
+    },
+    _modules:[],
+    addModule:function(file)
     {
-        if(typeof(module[o[j]]) == "undefined")
-            module[o[j]] = {};
-        module = module[o[j]];
-    }
-    module.extend = function(o)
-    {
-        for(i in o)
-            this[i] = o[i];
-    };
-    dd.addScript("javascript/dd." + file + ".js");
-    dd._modules.push(file);
-};
-dd._loadModuleCount = 0;
-dd._loadModules = function()
-{
-    for(var i = dd._loadModuleCount; i < dd._modules.length; i++)
-    {
-        var o = dd._modules[i].split(/\./);
+        var o = file.split(/\./);
         var module = dd;
         for(var j = 0; j < o.length; j++)
-            module = module[o[j]];
-        if(typeof(module.init) == "undefined")
         {
-            dd._loadInterval = setTimeout(dd._loadModules, 200);
-            break;
+            if(typeof(module[o[j]]) == "undefined")
+                module[o[j]] = {};
+            module = module[o[j]];
         }
-        module.init.call(dd);
-        dd._loadModuleCount++;
+        module.extend = function(o)
+        {
+            for(i in o)
+                this[i] = o[i];
+        };
+        dd.addScript("javascript/dd." + file + ".js");
+        dd._modules.push(file);
+    },
+    _loadModuleCount:0,
+    _loadModules:function()
+    {
+        for(var i = dd._loadModuleCount; i < dd._modules.length; i++)
+        {
+            var o = dd._modules[i].split(/\./);
+            var module = dd;
+            for(var j = 0; j < o.length; j++)
+                module = module[o[j]];
+            if(typeof(module.init) == "undefined")
+            {
+                dd._loadInterval = setTimeout(dd._loadModules, 200);
+                break;
+            }
+            module.init.call(dd);
+            dd._loadModuleCount++;
+        }
+    },
+    _load:function()
+    {
+        dd.html = document.getElementsByTagName("html")[0];
+        dd.html.head = document.getElementsByTagName("head")[0];
+        dd.html.body = document.getElementsByTagName("body")[0];
+        dd._loadModules();
     }
-}
-dd._load = function()
-{
-    dd.html = document.getElementsByTagName("html")[0];
-    dd.html.head = document.getElementsByTagName("head")[0];
-    dd.html.body = document.getElementsByTagName("body")[0];
-    dd._loadModules();
-};
+});
 // Initialise
 if(window.addEventListener)
     window.addEventListener("load", dd._load, false);
 else
     window.attachEvent('onload', dd._load);
-
-// JSON
-if(!this.JSON){
-this.JSON={};
-}
-(function(){
-function f(n){
-return n<10?'0'+n:n;
-}
-if(typeof Date.prototype.toJSON!=='function'){
-Date.prototype.toJSON=function(key){
-return isFinite(this.valueOf())?
-this.getUTCFullYear()+'-'+
-f(this.getUTCMonth()+1)+'-'+
-f(this.getUTCDate())+'T'+
-f(this.getUTCHours())+':'+
-f(this.getUTCMinutes())+':'+
-f(this.getUTCSeconds())+'Z':null;
-};
-String.prototype.toJSON=
-Number.prototype.toJSON=
-Boolean.prototype.toJSON=function(key){
-return this.valueOf();
-};
-}
-var cx=/[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
-escapable=/[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
-gap,
-indent,
-meta={
-'\b':'\\b',
-'\t':'\\t',
-'\n':'\\n',
-'\f':'\\f',
-'\r':'\\r',
-'"':'\\"',
-'\\':'\\\\'
-},
-rep;
-function quote(string){
-escapable.lastIndex=0;
-return escapable.test(string)?
-'"'+string.replace(escapable,function(a){
-var c=meta[a];
-return typeof c==='string'?c:
-'\\u'+('0000'+a.charCodeAt(0).toString(16)).slice(-4);
-})+'"':
-'"'+string+'"';
-}
-function str(key,holder){
-var i,
-k,
-v,
-length,
-mind=gap,
-partial,
-value=holder[key];
-if(value&&typeof value==='object'&&
-typeof value.toJSON==='function'){
-value=value.toJSON(key);
-}
-if(typeof rep==='function'){
-value=rep.call(holder,key,value);
-}
-switch(typeof value){
-case'string':
-return quote(value);
-case'number':
-return isFinite(value)?String(value):'null';
-case'boolean':
-case'null':
-return String(value);
-case'object':
-if(!value){
-return'null';
-}
-gap+=indent;
-partial=[];
-if(Object.prototype.toString.apply(value)==='[object Array]'){
-length=value.length;
-for(i=0;i<length;i+=1){
-partial[i]=str(i,value)||'null';
-}
-v=partial.length===0?'[]':
-gap?'[\n'+gap+
-partial.join(',\n'+gap)+'\n'+
-mind+']':
-'['+partial.join(',')+']';
-gap=mind;
-return v;
-}
-if(rep&&typeof rep==='object'){
-length=rep.length;
-for(i=0;i<length;i+=1){
-k=rep[i];
-if(typeof k==='string'){
-v=str(k,value);
-if(v){
-partial.push(quote(k)+(gap?': ':':')+v);
-}
-}
-}
-}else{
-for(k in value){
-if(Object.hasOwnProperty.call(value,k)){
-v=str(k,value);
-if(v){
-partial.push(quote(k)+(gap?': ':':')+v);
-}
-}
-}
-}
-v=partial.length===0?'{}':
-gap?'{\n'+gap+partial.join(',\n'+gap)+'\n'+
-mind+'}':'{'+partial.join(',')+'}';
-gap=mind;
-return v;
-}
-}
-if(typeof JSON.stringify!=='function'){
-JSON.stringify=function(value,replacer,space){
-var i;
-gap='';
-indent='';
-if(typeof space==='number'){
-for(i=0;i<space;i+=1){
-indent+=' ';
-}
-}else if(typeof space==='string'){
-indent=space;
-}
-rep=replacer;
-if(replacer&&typeof replacer!=='function'&&
-(typeof replacer!=='object'||
-typeof replacer.length!=='number')){
-throw new Error('JSON.stringify');
-}
-return str('',{'':value});
-};
-}
-if(typeof JSON.parse!=='function'){
-JSON.parse=function(text,reviver){
-var j;
-function walk(holder,key){
-var k,v,value=holder[key];
-if(value&&typeof value==='object'){
-for(k in value){
-if(Object.hasOwnProperty.call(value,k)){
-v=walk(value,k);
-if(v!==undefined){
-value[k]=v;
-}else{
-delete value[k];
-}
-}
-}
-}
-return reviver.call(holder,key,value);
-}
-cx.lastIndex=0;
-if(cx.test(text)){
-text=text.replace(cx,function(a){
-return'\\u'+
-('0000'+a.charCodeAt(0).toString(16)).slice(-4);
-});
-}
-if(/^[\],:{}\s]*$/.
-test(text.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,'@').
-replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,']').
-replace(/(?:^|:|,)(?:\s*\[)+/g,''))){
-j=eval('('+text+')');
-return typeof reviver==='function'?
-walk({'':j},''):j;
-}
-throw new SyntaxError('JSON.parse');
-};
-}
-}());
