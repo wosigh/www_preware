@@ -35,7 +35,7 @@ dd.preware.extend({
             dd.preware.page("index");
     },
     timers:[],
-    _madeItTo:0;
+    _madeItTo:0,
     animatePageFadeOut:function()
     {
         for(var i in this.timers)
