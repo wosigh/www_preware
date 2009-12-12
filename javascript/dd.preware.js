@@ -41,8 +41,7 @@ dd.preware.extend({
         for(var i in this.timers)
             clearInterval(this.timers[i]);
         var o = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
-        var n = 10 - dd.preware._madeItTo;
-        for(var i = n; i < o.length; i++)
+        for(var i = 0; i < o.length; i++)
             this.timers[i] = setTimeout((function(t, i){return function(){dd.preware.animatePageHandle(t, i);};})(o[i], i), i * 50);
     },
     animatePageFadeIn:function()
