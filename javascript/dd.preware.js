@@ -35,27 +35,31 @@ dd.preware.extend({
             dd.preware.page("index");
     },
     timers:[],
+    _madeItTo:0;
     animatePageFadeOut:function()
     {
         for(var i in this.timers)
             clearInterval(this.timers[i]);
         var o = [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0];
-        for(var i in o)
-            this.timers[i] = setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
+        var n = (dd.preware._madeItTo == 10) ? 0 : 10 - dd.preware._madeItTo;
+        for(var i = n; i < o.length; i++)
+            this.timers[i] = setTimeout((function(t, i){return function(){dd.preware.animatePageHandle(t, i);};})(o[i], i), i * 50);
     },
     animatePageFadeIn:function()
     {
         for(var i in this.timers)
             clearInterval(this.timers[i]);
         var o = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
-        for(var i in o)
-            this.timers[i] = setTimeout((function(t){return function(){dd.preware.animatePageHandle(t);};})(o[i]), i * 50);
+        var n = (dd.preware._madeItTo == 10) ? 0 : 10 - dd.preware._madeItTo;
+        for(var i = n; i < o.length; i++)
+            this.timers[i] = setTimeout((function(t, i){return function(){dd.preware.animatePageHandle(t, i);};})(o[i], i), i * 50);
     },
-    animatePageHandle:function(o)
+    animatePageHandle:function(o, i)
     {
         if(dd("main").exists())
         {
             dd("main").opacity(o);
+            dd.preware._madeItTo = i;
             if(o == 1.0)
                 dd("main").e.style.filter = "";
         }
