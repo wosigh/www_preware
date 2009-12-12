@@ -61,8 +61,7 @@ dd.preware.extend({
             dd.preware._madeItTo = i;
             if(o == 1.0)
                 dd("main").e.style.filter = "";
-            if(i = 0)
-                dd("main").setStyle({"display":"block"});
+            dd("main").setStyle({"display":"block"});
         }
     },
     scripts:[],
