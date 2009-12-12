@@ -54,9 +54,11 @@ dd.preware.extend({
     animatePageHandle:function(o)
     {
         if(dd("main").exists())
+        {
             dd("main").opacity(o);
-        if(o == 1.0)
-            dd("main").e.style.filter = "";
+            if(o == 1.0)
+                dd("main").e.style.filter = "";
+        }
     },
     scripts:[],
     styles:[],
