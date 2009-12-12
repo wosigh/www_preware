@@ -98,7 +98,7 @@ dd.preware.extend({
                     // - Background
                     this(this.html.body).e.style.background = "url(images/background.png) center top repeat-y #AFAFA8";
                     // - Fixed Header
-                    var s = this(this.html.body).addElement("div", {"class":"main","id":"main"});
+                    var s = this(this.html.body).addElement("div", {"class":"main","id":"main","style":"filter:alpha(opacity=0);opacity:0;"});
                     var h = this(s).addElement("div", {"class":"header"});
                     var ha = this(h).addElement("div", {"class":"advertisement"});
                     /*this(ha).addElement("script", {
