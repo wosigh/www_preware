@@ -40,7 +40,52 @@ $(document).ready(function(){
             <div class="webos-top-bar">
                 <div class="webos-time">...</div>
             </div>
-            <div class="webos-stage"></div>
+            <div class="webos-stage">
+                <div class="webos-stage-tl webos-stage-corner"></div>
+                <div class="webos-stage-tr webos-stage-corner"></div>
+                <div class="scene-fade-top"></div>
+                <div class="scene-fade-bottom"></div>
+
+
+
+                <div class="webos-stage-bl webos-stage-corner"></div>
+                <div class="webos-stage-br webos-stage-corner"></div>
+
+                <div class="webos-stage-inner">
+
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+asdfasdfasdfA<br/>
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
