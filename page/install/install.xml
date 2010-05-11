@@ -6,6 +6,17 @@
             <p><button id="link_index" label="Back to Preware Overview" /></p>
             <section label="Installing Preware">
                 <p>Expand the category that matches your operating system. Follow the simple and organised steps to install Preware.</p>
+                <subsection label="Installing with WebOS Quick Install (All)" open="false">
+                    <substep label="1. "><span>Put your device in Developer Mode</span></substep>
+                    <substep label="2. "><span>Run WebOS Quick Install</span></substep>
+                    <substep label="3. "><span>Press the third button on the right</span></substep>
+                    <substep label="4. "><span>Choose WebOS Internals Feed (Pre) or WebOS Internals Feed (Pixi) from the dropdown list at the top.</span></substep>
+                    <substep label="5. "><span>Select Preware from the list.</span></substep>
+                    <substep label="6. "><span>Press DOWNLOAD.</span></substep>
+                    <substep label="7. "><span>Press INSTALL.</span></substep>
+                    <substep label="8. "><span>Select YES if requested to confirm install script execution.</span></substep>
+                </subsection>
+		<!--
                 <subsection label="Install Guide (Windows)" open="false">
                     <step label="Step 1: Put your phone into Developer Mode (skip if you already have developer mode on)">
                         <substep label="1. "><span>Go to the main (start) screen on your Palm Pre or Pixi.</span></substep>
@@ -45,18 +56,14 @@
                             <span>Tap Restart</span>
                         </substep>
                     </step>
-                    <step label="Step 5: Update the Package Manager Service and Preware">
+                    <step label="Step 5: Update Preware">
                         <substep label="1. "><span>Tap Launcher</span></substep>
                         <substep label="2. "><span>Tap Preware</span></substep>
                         <substep label="3. "><span>Tap OK to continue if there is a splash screen</span></substep>
-                        <substep label="4. "><span>Tap Package Updates (an update for Package Manager Service and Preware should be shown)</span></substep>
-                        <substep label="5. "><span>Tap Package Manager Service</span></substep>
+                        <substep label="4. "><span>Tap Package Updates (an update for Preware should be shown)</span></substep>
+                        <substep label="5. "><span>Tap Preware</span></substep>
                         <substep label="6. "><span>Tap Update</span></substep>
-                        <substep label="7. "><span>Tap OK when the Package Manager Service application has installed</span></substep>
-                        <substep label="8. "><span>Swipe back to return to Package Updates</span></substep>
-                        <substep label="9. "><span>Tap Preware</span></substep>
-                        <substep label="10. "><span>Tap Update</span></substep>
-                        <substep label="11. "><span>Tap OK when the Preware application has installed</span></substep>
+                        <substep label="7. "><span>Tap OK when the Preware application has installed</span></substep>
                     </step>
                 </subsection>
                 <subsection label="Install Guide (Linux)" open="false">
@@ -98,18 +105,14 @@
                             <span>Tap Restart</span>
                         </substep>
                     </step>
-                    <step label="Step 5: Update the Package Manager Service and Preware">
+                    <step label="Step 5: Update Preware">
                         <substep label="1. "><span>Tap Launcher</span></substep>
                         <substep label="2. "><span>Tap Preware</span></substep>
                         <substep label="3. "><span>Tap OK to continue if there is a splash screen</span></substep>
-                        <substep label="4. "><span>Tap Package Updates (an update for Package Manager Service and Preware should be shown)</span></substep>
-                        <substep label="5. "><span>Tap Package Manager Service</span></substep>
+                        <substep label="4. "><span>Tap Package Updates (an update for Preware should be shown)</span></substep>
+                        <substep label="5. "><span>Tap Preware</span></substep>
                         <substep label="6. "><span>Tap Update</span></substep>
-                        <substep label="7. "><span>Tap OK when the Package Manager Service application has installed</span></substep>
-                        <substep label="8. "><span>Swipe back to return to Package Updates</span></substep>
-                        <substep label="9. "><span>Tap Preware</span></substep>
-                        <substep label="10. "><span>Tap Update</span></substep>
-                        <substep label="11. "><span>Tap OK when the Preware application has installed</span></substep>
+                        <substep label="7. "><span>Tap OK when the Preware application has installed</span></substep>
                     </step>
                 </subsection>
                 <subsection label="Install Guide (Macintosh)" open="false">
@@ -151,38 +154,20 @@
                             <span>Tap Restart</span>
                         </substep>
                     </step>
-                    <step label="Step 5: Update the Package Manager Service and Preware">
+                    <step label="Step 5: Update Preware">
                         <substep label="1. "><span>Tap Launcher</span></substep>
                         <substep label="2. "><span>Tap Preware</span></substep>
                         <substep label="3. "><span>Tap OK to continue if there is a splash screen</span></substep>
-                        <substep label="4. "><span>Tap Package Updates (an update for Package Manager Service and Preware should be shown)</span></substep>
-                        <substep label="5. "><span>Tap Package Manager Service</span></substep>
+                        <substep label="4. "><span>Tap Package Updates (an update Preware should be shown)</span></substep>
+                        <substep label="5. "><span>Tap Preware</span></substep>
                         <substep label="6. "><span>Tap Update</span></substep>
-                        <substep label="7. "><span>Tap OK when the Package Manager Service application has installed</span></substep>
-                        <substep label="8. "><span>Swipe back to return to Package Updates</span></substep>
-                        <substep label="9. "><span>Tap Preware</span></substep>
-                        <substep label="10. "><span>Tap Update</span></substep>
-                        <substep label="11. "><span>Tap OK when the Preware application has installed</span></substep>
+                        <substep label="7. "><span>Tap OK when the Preware application has installed</span></substep>
                     </step>
                 </subsection>
-                <subsection label="Installing with WebOS Quick Install (All)" open="false">
-                    <substep label="1. "><span>Put your device in Developer Mode</span></substep>
-                    <substep label="2. "><span>Run WebOS Quick Install</span></substep>
-                    <substep label="3. "><span>Press the third button on the right</span></substep>
-                    <substep label="4. "><span>Choose WebOS Internals Feed (all) from the dropdown list at the top.</span></substep>
-                    <substep label="5. "><span>Select Package Manager Service from the list.</span></substep>
-                    <substep label="6. "><span>Press DOWNLOAD.</span></substep>
-                    <substep label="7. "><span>Press INSTALL.</span></substep>
-                    <substep label="8. "><span>Press the third button on the right</span></substep>
-                    <substep label="9. "><span>Choose WebOS Internals Feed (all) from the dropdown list at the top.</span></substep>
-                    <substep label="10. "><span>Select Preware from the list.</span></substep>
-                    <substep label="11. "><span>Press DOWNLOAD.</span></substep>
-                    <substep label="12. "><span>Press INSTALL.</span></substep>
-                </subsection>
+		-->
                 <subsection label="Updating" open="false">
-                    <substep label="1. "><span>To update Preware or the Package Manager Service, simpy use Preware itself.</span></substep>
-                    <substep label="2. "><span>When you update the Package Manager Service, you will be asked to do a Luna Restart. This will cause your cellular connection to drop, and your phone to be sluggish for 30 seconds or so.</span></substep>
-                    <substep label="3. "><span>When you update the Preware, it will close itself when the update completes. Simply launch Preware again to begin using the new version.</span></substep>
+                    <substep label="1. "><span>To update Preware, simpy use Preware itself.</span></substep>
+                    <substep label="2. "><span>When you update the Preware, it will close itself when the update completes. Simply launch Preware again to begin using the new version.</span></substep>
                 </subsection>
                 <subsection label="Frequently Asked Questions" open="false">
                     <p>None</p>
