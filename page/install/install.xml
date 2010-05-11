@@ -5,7 +5,7 @@
         <left>
             <p><button id="link_index" label="Back to Preware Overview" /></p>
             <section label="Installing Preware">
-                <p>Expand the category that matches your operating system. Follow the simple and organised steps to install Preware.</p>
+                <p>Follow the simple and organised steps to install Preware.</p>
                 <subsection label="Installing with WebOS Quick Install (All)" open="false">
                     <substep label="1. "><span>Put your device in Developer Mode</span></substep>
                     <substep label="2. "><span>Run WebOS Quick Install</span></substep>
