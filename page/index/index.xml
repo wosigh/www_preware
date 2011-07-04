@@ -3,25 +3,20 @@
     <script src="page/index/index.js" />
     <body>
         <left>
-            <section label="New Site">
-                <p>Welcome to the new Preware.org site. It is not yet completed.</p>
-                <p>We will hopefully be integrating a new feed search feature soon.</p>
-                <p>Before it is available, you can browse the package feeds manually.</p>
-                <p><a href="http://ipkg.preware.org/feeds/">Browse all the preware.org open standard package feeds ...</a></p>
-            </section>
             <section label="Introduction">
-                <p>Preware is a package management application for the Palm Pre. Users can install any package from any of the open standard package feeds on preware.org (or any other location that hosts an open standard package feed).</p>
+                <p>Preware is a homebrew package management application for your HP webOS device. Users can install any package from any of the open standard package feeds on preware.org (or any other location that hosts an open standard package feed).</p>
                 <p>Preware is the most advanced installer currently available - it is the only on-device installer that can install applications, themes, and patches, as well as give access to over 1600 Linux programs.</p>
-                <p><strong>Features</strong></p>
-                <substep label="1. "><span>Install / Remove / Update Applications</span></substep>
-                <substep label="2. "><span>Install / Remove / Update Themes</span></substep>
-                <substep label="3. "><span>Install / Remove / Update Patches</span></substep>
-                <substep label="4. "><span>Update Screen</span></substep>
-                <p style="height:10px;"> </p>
-                <p><button id="link_install" label="Preware Install Guides" /></p>
-                <subsection label="Frequently Asked Questions" open="false">
-                    <p>None</p>
-                </subsection>
+            </section>
+            <section label="How Do You Install Preware?">
+                <p>The best way to learn how to install Preware and other great homebrew applications,
+		   patches, themes and custom kernels is to download the Preware Homebrew Documentation
+		   app from the official HP webOS App Catalog and follow the extremely detailed step-by-step
+		   instructions that are included in that application.</p>
+            </section>
+            <section label="Need Help or Want to Help Out?">
+                <img src="images/icon_wirc.png" class="icon-left"/>
+                <p>You can chat with us on the Freenode IRC network using the wIRC application from the HP webOS App Catalog.</p>
+                <p><a href="http://webchat.freenode.net/?channels=webos-internals">Join us in #webos-internals ...</a></p>
             </section>
         </left>
         <right>
@@ -33,11 +28,6 @@
                 <screenshot src="page/index/screenshot_5.png" />
                 <screenshot src="page/index/screenshot_6.png" />
             </screenshots>
-            <section label="Need Help or Want to Help Out?">
-                <img src="images/icon_wirc.png" class="icon-left"/>
-                <p>You can chat with the developers on the Freenode IRC network.</p>
-                <p><a href="http://webchat.freenode.net/?channels=webos-internals">Join us in #webos-internals ...</a></p>
-            </section>
         </right>
     </body>
 </page>
